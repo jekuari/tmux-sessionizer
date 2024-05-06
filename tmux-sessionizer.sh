@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Projects ~/.config -mindepth 1 -maxdepth 2 -type d -not \( -name 'node_modules' -o -name '.git' \) | grep -vE '/(node_modules|\.git)/'| fzf)
+    selected=$(find ~/Projects ~/.config -mindepth 0 -maxdepth 2 -type d -not \( -name 'node_modules' -o -name '.git' \) | grep -vE '/(node_modules|\.git)/'| fzf)
 fi
 
 if [[ -z $selected ]]; then
